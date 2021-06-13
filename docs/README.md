@@ -10,15 +10,15 @@ A web application to input ingredients and receive recipes.  Will store favorite
 <p align="center">
 <img id="MIT-License" src="https://img.shields.io/apm/l/atomic-design-ui.svg?" />
 </p>
-<h2>Table of Contents</h2>
+<h2 align="center">Table of Contents</h2>
 
 * [Wireframe](https://github.com/esaldivar/mealhacks/#Wireframe)
 * [Features](https://github.com/esaldivar/mealhacks/#Features)
 * [License](https://github.com/esaldivar/mealhacks/#License)
 
-<h2 href="#Wireframe">Wireframe</h2>
+<h2 href="#Wireframe" align="center" >Wireframe</h2>
 <p>I used [Excalidraw](https://excalidraw.com/) to create a wireframe.  I am linking it here to display my thought process for this SPA.</p>
-<img src="navWire.png" width="650"/>
+<img src="navWire.png" width="850" />
 <h2 href="#Features">Features</h2>
 <h2 href="#License">License</h2>
 
