@@ -18,7 +18,7 @@ A web application to input ingredients and receive recipes.  Will store favorite
 
 <h2 href="#Wireframe">Wireframe</h2>
 <p>I used [Excalidraw](https://excalidraw.com/) to create a wireframe.  I am linking it here to display my thought process for this SPA.</p>
-<img src="navWire.png" width="250"/>
+<img src="navWire.png" width="650"/>
 <h2 href="#Features">Features</h2>
 <h2 href="#License">License</h2>
 
