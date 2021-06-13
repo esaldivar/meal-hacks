@@ -3,7 +3,7 @@ A web application to input ingredients and receive recipes.  Will store favorite
 #Meal Hacks
 
 <p align="center">
-    <img src="Meal.png" width="250"/>
+    <img src="logo.png" width="250"/>
 </p>
 <h1 align ="center">Meal Hacks</h1>
 <p align="center">A source for families to plug in what is in their pantry and load easy to follow recipes.</p>
@@ -12,11 +12,13 @@ A web application to input ingredients and receive recipes.  Will store favorite
 </p>
 <h2>Table of Contents</h2>
 
+* [Wireframe](https://github.com/esaldivar/mealhacks/#Wireframe)
 * [Features](https://github.com/esaldivar/mealhacks/#Features)
 * [License](https://github.com/esaldivar/mealhacks/#License)
 
-
-
+<h2 href="#Wireframe">Wireframe</h2>
+<p>I used [Excalidraw](https://excalidraw.com/) to create a wireframe.  I am linking it here to display my thought process for this SPA.</p>
+<img src="navWire.png" width="250"/>
 <h2 href="#Features">Features</h2>
 <h2 href="#License">License</h2>
 
