@@ -3,7 +3,7 @@ A web application to input ingredients and receive recipes.  Will store favorite
 #Meal Hacks
 
 <p align="center">
-    <img src="src/assets/Meal.png" width="250"/>
+    <img src="Meal.png" width="250"/>
 </p>
 <h1 align ="center">Meal Hacks</h1>
 <p align="center">A source for families to plug in what is in their pantry and load easy to follow recipes.</p>
