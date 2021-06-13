@@ -1,0 +1,19 @@
+{
+  "name": "meal-hacks",
+  "version": "1.0.0",
+  "description": "web application for meal planning",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/esaldivar/meal-hacks.git"
+  },
+  "author": "Eric Saldivar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/esaldivar/meal-hacks/issues"
+  },
+  "homepage": "https://github.com/esaldivar/meal-hacks#readme"
+}
