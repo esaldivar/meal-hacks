@@ -13,7 +13,7 @@ A web application to input ingredients and receive recipes.  Will store favorite
 <h2 align="center">Table of Contents</h2>
 
 
-* [Folder_Structure](https://github.com/esaldivar/meal-hacks/#Folder Structure)
+* [Folder_Structure](https://github.com/esaldivar/meal-hacks/#Folder_Structure)
 * [Wireframe](https://github.com/esaldivar/meal-hacks/#Wireframe)
 * [Features](https://github.com/esaldivar/meal-hacks/#Features)
 * [License](https://github.com/esaldivar/meal-hacks/#License)
