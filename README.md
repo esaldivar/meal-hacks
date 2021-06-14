@@ -13,10 +13,10 @@ A web application to input ingredients and receive recipes.  Will store favorite
 <h2 align="center">Table of Contents</h2>
 
 
-* [Folder Structure](https://github.com/esaldivar/mealhacks/#FolderStructure)
-* [Wireframe](https://github.com/esaldivar/mealhacks/#Wireframe)
-* [Features](https://github.com/esaldivar/mealhacks/#Features)
-* [License](https://github.com/esaldivar/mealhacks/#License)
+* [Folder Structure](https://github.com/esaldivar/meal-hacks/#FolderStructure)
+* [Wireframe](https://github.com/esaldivar/meal-hacks/#Wireframe)
+* [Features](https://github.com/esaldivar/meal-hacks/#Features)
+* [License](https://github.com/esaldivar/meal-hacks/#License)
 
 <h2 href="#FolderStucture" align="center" >File System Folder Structure</h2>
 <p>I used <a href="https://creately.com/" target="_blank">Creatly</a> to create my folder structure.  I am linking it here to display my thought process for this SPA.</p>
