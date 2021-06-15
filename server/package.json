@@ -1,0 +1,27 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "back end of meal hacks",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/esaldivar/meal-hacks.git"
+  },
+  "keywords": [
+    "backend",
+    "javascript",
+    "express"
+  ],
+  "author": "Eric Saldivar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/esaldivar/meal-hacks/issues"
+  },
+  "homepage": "https://github.com/esaldivar/meal-hacks#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
