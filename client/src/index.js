@@ -1,6 +1,11 @@
+/**
+ * 
+ */
+
 import React, { Component} from 'react';
 import { render } from 'react-dom'
-import Banana from './Banana'
+import NavBar from './NavBar'
+import Login from './Login'
 import './style.css'
 
 
@@ -14,8 +19,9 @@ class App extends Component {
   render(){
     return(
       <div className ="main-page">
+        <NavBar/>
+
         <button>Click me. DO IT!</button>
-        <Banana/>
       </div>
     )
   }
