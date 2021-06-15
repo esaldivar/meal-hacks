@@ -1,4 +1,5 @@
 const path = require('path');
+const json5 = require('json5');
 
 module.exports = {
   entry: './src/index.js',
@@ -15,6 +16,13 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
+      },
+      {
+        test: /\.json5$/i,
+        type: 'json',
+        parser: {
+          parse: json5.parse,
+        },
       },
     ],
   },
