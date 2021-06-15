@@ -21,9 +21,9 @@ function component() {
   element.innerHTML = _.join(['goodbye', 'webpack'], ' ');
   element.classList.add('hello');
 
-   // testing a button
+  // testing a button
   btn.innerHTML = 'Click me and check the console!';
-  btn.onclick = printMe;
+  btn.onclick = console.log('whats up?');
 
   element.appendChild(btn);
    
