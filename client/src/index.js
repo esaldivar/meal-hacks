@@ -20,7 +20,7 @@ class App extends Component {
     return(
       <div className ="main-page">
         <NavBar/>
-        <Login />
+
         <button>Click me. DO IT!</button>
       </div>
     )

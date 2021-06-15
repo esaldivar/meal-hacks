@@ -27,14 +27,15 @@ const useStyles = makeStyles((theme) => ({
     border: "solid white 0.1rem",
     '&:hover':{
       color: 'blue',
-      backgroundColor: 'gold'
+      backgroundColor: 'white',
+      border: "solid #3F51B5 0.1rem"
     }
   },
   keys: {
-    color: 'gold',
+    color: 'white',
     margin: '0 5px 0 0',
     '&:hover':{
-      color: 'blue'
+      color: '#3F51B5'
     }
   }
 }));
