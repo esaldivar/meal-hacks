@@ -4,7 +4,8 @@
   "description": "front end side of meal hacks web app",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,8 @@
   },
   "homepage": "https://github.com/esaldivar/meal-hacks#readme",
   "devDependencies": {
+    "css-loader": "^5.2.6",
+    "style-loader": "^2.0.0",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.2"
   },
