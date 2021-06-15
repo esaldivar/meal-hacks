@@ -9,7 +9,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
-import Icon from '@material-ui/core/Icon';
+import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import Avatar from '@material-ui/core/Avatar';
 
 
@@ -25,10 +25,17 @@ const useStyles = makeStyles((theme) => ({
   },
   login: {
     border: "solid white 0.1rem",
+    '&:hover':{
+      color: 'blue',
+      backgroundColor: 'gold'
+    }
   },
   keys: {
     color: 'gold',
-    margin: '0 5px 0 0'
+    margin: '0 5px 0 0',
+    '&:hover':{
+      color: 'blue'
+    }
   }
 }));
 
@@ -40,13 +47,13 @@ const NavBar = () => {
       <AppBar position="static">
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-          <Avatar alt="Meal Hacks Icon" src="logo.png" />
+          <Avatar alt="Meal Hacks Icon" src="./logo.png" />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
           <Button color="inherit">Meal Hacks</Button>
           <Button color="inherit">Find a Recipe</Button>
           </Typography>
-          <Button color="inherit" className={classes.login}><Icon className={classes.keys}>cake</Icon>Login</Button>
+          <Button color="inherit" className={classes.login}><VpnKeyIcon className={classes.keys}/>Login</Button>
         </Toolbar>
       </AppBar>
     </div>
