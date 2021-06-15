@@ -23,14 +23,25 @@ module.exports = {
     rules: [
       {
         test: /\.css$/i,
+        exclude: /node_modules/,
         use: ['style-loader', 'css-loader'],
       },
       {
+        test:  /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env', '@babel/preset-react']
+        }
+      },
+      {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        exclude: /node_modules/,
         type: 'asset/resource',
       },
       {
         test: /\.json5$/i,
+        exclude: /node_modules/,
         type: 'json',
         parser: {
           parse: json5.parse,
@@ -40,5 +51,9 @@ module.exports = {
   },
   devServer: {
     contentBase: './dist',
+  },
+  resolve: {
+    // Enable importing JS / JSX files without specifying their extension
+    extensions: ['.js', '.jsx'],
   },
 };

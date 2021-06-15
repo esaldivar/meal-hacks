@@ -1,35 +1,24 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import './index.css';
-// import App from './App';
+import React, { Component} from 'react';
+import { render } from 'react-dom'
+import Banana from './Banana'
+import './style.css'
 
 
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
-import _ from 'lodash';
-import './style.css';
-import Icon from '../assets/logo.png';
-
-function component() {
-  const element = document.createElement('div');
-  const btn = document.createElement('button'); 
-  // Lodash, currently included via a script, is required for this line to work
-  element.innerHTML = _.join(['goodbye', 'webpack'], ' ');
-  element.classList.add('hello');
-
-  // testing a button
-  btn.innerHTML = 'Click me and check the console!';
-  btn.onclick = console.log('whats up?');
-
-  element.appendChild(btn);
-   
-  
-  
-  return element;
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      bool: true
+    };
+  }
+  render(){
+    return(
+      <div className ="main-page">
+        <button>Click me. DO IT!</button>
+        <Banana/>
+      </div>
+    )
+  }
 }
 
-document.body.appendChild(component());
+render(<App />, document.querySelector('#root'));
