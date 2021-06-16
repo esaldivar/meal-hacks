@@ -1,3 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Luckiest+Guy');
+
 * {
   margin: 0;
+}
+
+.funnyText {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  margin: 10vh 0 0 0;
+  font-family: 'Luckiest Guy', cursive;
+  background-color: #3F51B5;
+  border-radius: 20px;
+}
+
+.funnyText h1 {
+  margin-top: 5vh;
+  font-size: 15vw;
+  background-image: url(https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);
+  background-size: cover; 
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }

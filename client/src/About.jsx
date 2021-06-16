@@ -20,8 +20,9 @@
    const classes = useStyles();
  
    return (
-     <div>
-         <h1>About</h1>
+     <div className="funnyText">
+         <h1>Meal Hacks</h1>
+         
      </div>
    );
  }

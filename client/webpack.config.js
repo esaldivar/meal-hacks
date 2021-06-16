@@ -60,6 +60,7 @@ module.exports = {
   },
   devServer: {
     contentBase: './dist',
+    headers: { 'Access-Control-Allow-Origin': '*' }
   },
   resolve: {
     // Enable importing JS / JSX files without specifying their extension
