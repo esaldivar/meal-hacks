@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import NavBar from './NavBar'
 import Login from './Login'
-
+import SignUp from './Signup'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,7 +16,8 @@ const App = () => {
   return (
     <div className={classes.root}>
       <NavBar/>
-      <Login />
+      {/* <Login /> */}
+      <SignUp />
     </div>
   );
 }
