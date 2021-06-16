@@ -11,7 +11,7 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import Avatar from '@material-ui/core/Avatar';
-
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -54,7 +54,12 @@ const NavBar = () => {
           <Button color="inherit">Meal Hacks</Button>
           <Button color="inherit">Find a Recipe</Button>
           </Typography>
-          <Button color="inherit" className={classes.login}><VpnKeyIcon className={classes.keys}/>Login</Button>
+          <Link to={{
+    pathname: "/Login"
+    
+  }}>
+           <Button color="inherit" className={classes.login}><VpnKeyIcon className={classes.keys} />Login</Button>
+          </Link>
         </Toolbar>
       </AppBar>
     </div>

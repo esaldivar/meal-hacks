@@ -15,7 +15,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Meal Hacks',
-      template: './src/index.html',
+      template: './index.html',
       filename: './index.html'
     }),
   ],

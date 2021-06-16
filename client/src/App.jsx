@@ -1,5 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import {BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import NavBar from './NavBar'
 import Login from './Login'
 import SignUp from './Signup'
@@ -15,9 +16,13 @@ const App = () => {
 
   return (
     <div className={classes.root}>
+      <Router>
       <NavBar/>
-      {/* <Login /> */}
-      <SignUp />
+        <Switch>
+            <Route path="/Login" exact component={Login} /> 
+            <Route path="/Signup" exact component={SignUp} />
+        </Switch>
+      </Router>
     </div>
   );
 }
