@@ -9,26 +9,15 @@
  import TextField from '@material-ui/core/TextField';
  import FormControlLabel from '@material-ui/core/FormControlLabel';
  import Checkbox from '@material-ui/core/Checkbox';
- import Link from '@material-ui/core/Link';
  import Paper from '@material-ui/core/Paper';
  import Box from '@material-ui/core/Box';
  import Grid from '@material-ui/core/Grid';
  import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
  import Typography from '@material-ui/core/Typography';
  import { makeStyles } from '@material-ui/core/styles';
+ import {Link} from 'react-router-dom';
  
- function Copyright() {
-   return (
-     <Typography variant="body2" color="textSecondary" align="center">
-       {'Copyright © '}
-       <Link color="inherit" href="https://material-ui.com/">
-         Your Website
-       </Link>{' '}
-       {new Date().getFullYear()}
-       {'.'}
-     </Typography>
-   );
- }
+ 
  
  const useStyles = makeStyles((theme) => ({
    root: {
@@ -67,7 +56,7 @@ const Login = () => {
    return (
      <Grid container component="main" className={classes.root}>
        <CssBaseline />
-       <Grid item xs={false} sm={4} md={7} className={classes.image} />
+        <Grid item xs={false} sm={4} md={7} className={classes.image} />
        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
          <div className={classes.paper}>
            <Avatar className={classes.avatar}>
@@ -109,6 +98,7 @@ const Login = () => {
                variant="contained"
                color="primary"
                className={classes.submit}
+               
              >
                Sign In
              </Button>
@@ -119,13 +109,15 @@ const Login = () => {
                  </Link>
                </Grid>
                <Grid item>
-                 <Link href="#" variant="body2">
+                 <Link to={{
+    pathname: "/Signup"
+  }}>
                    {"Don't have an account? Sign Up"}
                  </Link>
                </Grid>
              </Grid>
              <Box mt={5}>
-               <Copyright />
+               
              </Box>
            </form>
          </div>

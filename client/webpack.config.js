@@ -15,7 +15,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Meal Hacks',
-      template: './src/index.html',
+      template: './index.html',
       filename: './index.html'
     }),
   ],
@@ -38,7 +38,16 @@ module.exports = {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         exclude: /node_modules/,
         type: 'asset/resource',
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: path.resolve(__dirname, 'dist'),
+            publicPath:'/'
+          }  
+        }]
       },
+
       {
         test: /\.json5$/i,
         exclude: /node_modules/,
