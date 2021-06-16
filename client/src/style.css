@@ -5,21 +5,37 @@
 }
 
 .funnyText {
-  height: 100vh;
   display: flex;
   justify-content: center;
-  margin: 10vh 0 0 0;
+  align-content: center;
+  margin: 0 auto;
+  margin-top: 10vh;
   font-family: 'Luckiest Guy', cursive;
   background-color: #3F51B5;
   border-radius: 20px;
+  flex-direction: column;
+  width: 80%;
 }
 
 .funnyText h1 {
+  text-align: center;
   margin-top: 5vh;
-  font-size: 15vw;
+  font-size: 10vw;
   background-image: url(https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);
   background-size: cover; 
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+.typeBox {
+  margin: 0 auto;
+  margin-bottom: 5vh;
+  height: 20px;
+  width: 50%;
+  background-color: white;
+  color: #3F51B5;
+  font-size: 2vw;
+  padding: 20px 15px;
+  border-radius: 25px;;
 }
