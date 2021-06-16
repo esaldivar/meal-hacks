@@ -45,11 +45,16 @@
    }, [])
 
    return (
-    <div className="aboutBG">
-        <div className="funnyText">
-            <h1>Meal Hacks</h1>
-            <h2 className="typeBox" ref={el}/>
-        </div>  
+    <div>
+        <div className="aboutBG">
+            <div className="funnyText">
+                <h1>Meal Hacks</h1>
+                <h2 className="typeBox" ref={el}/>
+                <div className="innerAbout">
+                    <p>goodbye</p>
+                </div>
+            </div>
+        </div>
      </div>
    );
  }
