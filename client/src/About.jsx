@@ -45,7 +45,7 @@
    }, [])
 
    return (
-    <div>
+    <div className="aboutBG">
         <div className="funnyText">
             <h1>Meal Hacks</h1>
             <h2 className="typeBox" ref={el}/>
