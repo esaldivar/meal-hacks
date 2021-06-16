@@ -49,8 +49,7 @@
         <div className="funnyText">
             <h1>Meal Hacks</h1>
             <h2 className="typeBox" ref={el}/>
-        </div>
-           
+        </div>  
      </div>
    );
  }
