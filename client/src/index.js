@@ -4,12 +4,12 @@
 
 import React, { Component} from 'react';
 import { render } from 'react-dom'
-import NavBar from './NavBar'
-import Login from './Login'
+import App from './App'
+
 import './style.css'
 
 
-class App extends Component {
+class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,12 +19,10 @@ class App extends Component {
   render(){
     return(
       <div className ="main-page">
-        <NavBar/>
-
-        <button>Click me. DO IT!</button>
+        <App/>
       </div>
     )
   }
 }
 
-render(<App />, document.querySelector('#root'));
+render(<Main />, document.querySelector('#root'));

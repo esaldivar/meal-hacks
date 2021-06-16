@@ -48,7 +48,7 @@ const NavBar = () => {
       <AppBar position="static">
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-          <Avatar alt="Meal Hacks Icon" src="./logo.png" />
+          <Avatar className="icon" alt="Meal Hacks Icon" src="./logo.png" />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
           <Button color="inherit">Meal Hacks</Button>
