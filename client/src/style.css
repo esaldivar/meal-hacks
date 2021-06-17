@@ -7,7 +7,7 @@
 
 .aboutBG {
   position: relative; 
-  height: 100vh;
+  height: 100%;
   width: 100%;
   display: flex;
   z-index: 1;
@@ -29,7 +29,6 @@
   color: white;
   margin: 0 auto;
   margin-bottom: 5vh;
-  margin-bottom: 5vh;
 }
 
 
@@ -38,19 +37,21 @@
   justify-content: center;
   align-content: center;
   margin: 0 auto;
-  margin-top: 10vh;
+  margin-top: 15vh;
+  margin-bottom: 15vh;
   font-family: 'Luckiest Guy', cursive;
   background-color: #3F51B5;
+  /* opacity: 0.93; */
   border-radius: 20px;
   flex-direction: column;
-  height: 40vh;
   width: 60%;
   z-index: 0;
+  padding-top: 2vh;
 }
 
 .funnyText h1 {
   text-align: center;
-  margin-top: 5vh;
+  margin-top: 0;
   font-size: 10vw;
   background-image: url(https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);
   background-size: cover; 
@@ -61,14 +62,71 @@
 
 .typeBox {
   margin: 0 auto;
-  margin-bottom: 1vh;
+  margin-bottom: 5vh;
   height: 20px;
+  align-content: center;
   width: 56%;
   background-color: white;
   color: #3F51B5;
-  font-size: 2vw;
-  padding: 20px 15px;
+  font-size: 1.75vw;
+  padding: 30px 15px;
   border-radius: 25px;
   border: solid #3F51B5 1px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+.aboutHow {
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.innerAbout {
+  display: flex;
+  width: 100%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.innerCol {
+  text-align: center;
+  width: 50%;
+  height: 300px;
+  margin: 1vw;
+  padding: 1rem;
+}
+
+.innerCol h2 {
+  color: yellow;
+  font-weight: lighter;
+  font-size: 3rem;
+}
+
+.innerCol p {
+  color: rgb(227, 217, 217);
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.choose{
+  background-image: url(https://images.unsplash.com/photo-1466637574441-749b8f19452f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80);
+  background-size: cover;
+  background-position: center;
+}
+
+.recipe {
+  background-image: url(https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1935&q=80);
+  background-size: cover;
+  background-position: center;
+}
+
+.favorites {
+  background-image: url(https://images.unsplash.com/photo-1542010589005-d1eacc3918f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1969&q=80);
+  background-size: cover;
+  background-position: center;
+}
+
+.aboutButton {
+  text-decoration: none;
+}
