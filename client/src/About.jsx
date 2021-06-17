@@ -60,6 +60,7 @@
 
   
    //customer does not exist, render without the first name which should be john
+   
 
    return (
     <div>
@@ -69,16 +70,16 @@
                 <h2 className="typeBox" ref={el}/>
                 <h2 className="aboutHow">How it works</h2>
                 <div className="innerAbout">
-                    <div className="innerCol">bananas</div>
-                    <div className="innerCol">oranges</div>
+                    <div className="innerCol choose"></div>
+                    <div className="innerCol">Choose Your Ingredients</div>
                 </div>
                 <div className="innerAbout">
-                    <div className="innerCol">bananas</div>
-                    <div className="innerCol">oranges</div>
+                    <div className="innerCol">Find a recipe</div>
+                    <div className="innerCol"></div>
                 </div>
                 <div className="innerAbout">
-                    <div className="innerCol">bananas</div>
-                    <div className="innerCol">oranges</div>
+                    <div className="innerCol"></div>
+                    <div className="innerCol">Keep your favorites</div>
                 </div>
             </div>
         </div>
