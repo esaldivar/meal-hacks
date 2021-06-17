@@ -52,7 +52,7 @@
                 <h1>Meal Hacks</h1>
                 <h2 className="typeBox" ref={el}/>
                 <div className="innerAbout">
-                    <p>goodbye</p>
+                    <button className='aboutButton'>backend testing</button>
                 </div>
             </div>
         </div>

@@ -68,5 +68,25 @@
   color: #3F51B5;
   font-size: 2vw;
   padding: 20px 15px;
-  border-radius: 25px;;
+  border-radius: 25px;
+  border: solid #3F51B5 1px;
+}
+
+.aboutButton {
+  font-size: 2rem;
+  padding: 15px;
+  border-radius: 25px;
+  color: #3F51B5;
+}
+.aboutButton:hover {
+  background-color: #3F51B5;
+  border: solid white 0.5px;
+  color: white;
+  outline: none;
+}
+
+.aboutButton:active {
+  background-color:#283db7;
+  outline: none;
+  transition: ease-in-out, width .7s ease-in-out;
 }
