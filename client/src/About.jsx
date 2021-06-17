@@ -68,8 +68,7 @@
                 <h1>Meal Hacks</h1>
                 <h2 className="typeBox" ref={el}/>
                 <div className="innerAbout">
-                    <button className='aboutButton' onClick={getMe}>backend testing</button>
-                    {customer && <p>{customer.firstName}</p>}
+
                 </div>
             </div>
         </div>
