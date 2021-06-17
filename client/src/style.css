@@ -25,7 +25,12 @@
     opacity: 0.75;
 }
 
-
+.innerAbout {
+  color: white;
+  margin: 0 auto;
+  margin-bottom: 5vh;
+  margin-bottom: 5vh;
+}
 
 
 .funnyText {
@@ -56,12 +61,14 @@
 
 .typeBox {
   margin: 0 auto;
-  margin-bottom: 5vh;
+  margin-bottom: 1vh;
   height: 20px;
   width: 56%;
   background-color: white;
   color: #3F51B5;
   font-size: 2vw;
   padding: 20px 15px;
-  border-radius: 25px;;
+  border-radius: 25px;
+  border: solid #3F51B5 1px;
 }
+

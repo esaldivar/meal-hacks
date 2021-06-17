@@ -12,13 +12,15 @@ class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      bool: true
+     
     };
   }
+  
   render(){
+    const customers = this.state.customers;
     return(
       <div className ="main-page">
-        <App/>
+        <App />
       </div>
     )
   }

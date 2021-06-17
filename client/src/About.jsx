@@ -2,7 +2,7 @@
  * 
  */
 
- import React from 'react';
+ import React, { useState, useEffect } from 'react';
  import { makeStyles } from '@material-ui/core/styles';
 
 
@@ -16,14 +16,14 @@
    },
  }));
  
- const About = () => {
+ function About() {
    const classes = useStyles();
 
    const el = React.useRef(null);
    // Create reference to store the Typed instance itself
-     const typed = React.useRef(null);
+    const typed = React.useRef(null);
  
-   React.useEffect(() => {
+   useEffect(() => {
      const options = {
          strings: [
          'Are you hungry?',
@@ -32,6 +32,7 @@
        ],
        typeSpeed: 50,
        backSpeed: 50,
+       showCursor: false
      };
      
      // elRef refers to the <span> rendered below
@@ -44,15 +45,36 @@
      }
    }, [])
 
+   //api request
+
+
+
+  const [customer, newCustomers] = useState(null);
+
+
+   const getMe =() => {
+     fetch('/api/customers')
+     .then(rawdata => rawdata.json())
+      .then(data => newCustomers(data[0]))
+   };
+
+  
+   //customer does not exist, render without the first name which should be john
+
    return (
-    <div className="aboutBG">
-        <div className="funnyText">
-            <h1>Meal Hacks</h1>
-            <h2 className="typeBox" ref={el}/>
+    <div>
+        <div className="aboutBG">
+            <div className="funnyText">
+                <h1>Meal Hacks</h1>
+                <h2 className="typeBox" ref={el}/>
+                <div className="innerAbout">
+
+                </div>
+            </div>
         </div>
-           
      </div>
    );
+
  }
  
  export default About;
