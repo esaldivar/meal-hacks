@@ -68,7 +68,16 @@
                 <h1>Meal Hacks</h1>
                 <h2 className="typeBox" ref={el}/>
                 <div className="innerAbout">
-
+                    <div className="innerCol">bananas</div>
+                    <div className="innerCol">oranges</div>
+                </div>
+                <div className="innerAbout">
+                    <div className="innerCol">bananas</div>
+                    <div className="innerCol">oranges</div>
+                </div>
+                <div className="innerAbout">
+                    <div className="innerCol">bananas</div>
+                    <div className="innerCol">oranges</div>
                 </div>
             </div>
         </div>

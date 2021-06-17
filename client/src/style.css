@@ -7,7 +7,7 @@
 
 .aboutBG {
   position: relative; 
-  height: 100vh;
+  height: 100%;
   width: 100%;
   display: flex;
   z-index: 1;
@@ -29,7 +29,6 @@
   color: white;
   margin: 0 auto;
   margin-bottom: 5vh;
-  margin-bottom: 5vh;
 }
 
 
@@ -38,19 +37,21 @@
   justify-content: center;
   align-content: center;
   margin: 0 auto;
-  margin-top: 10vh;
+  margin-top: 15vh;
+  margin-bottom: 15vh;
   font-family: 'Luckiest Guy', cursive;
   background-color: #3F51B5;
+  /* opacity: 0.93; */
   border-radius: 20px;
   flex-direction: column;
-  height: 40vh;
   width: 60%;
   z-index: 0;
+  padding-top: 2vh;
 }
 
 .funnyText h1 {
   text-align: center;
-  margin-top: 5vh;
+  margin-top: 0px;
   font-size: 10vw;
   background-image: url(https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);
   background-size: cover; 
@@ -61,7 +62,7 @@
 
 .typeBox {
   margin: 0 auto;
-  margin-bottom: 1vh;
+  margin-bottom: 5vh;
   height: 20px;
   width: 56%;
   background-color: white;
@@ -72,3 +73,15 @@
   border: solid #3F51B5 1px;
 }
 
+.innerAbout {
+  display: flex;
+  width: 100%;
+}
+
+.innerCol {
+  background-color: red;
+  text-align: center;
+  width: 50%;
+  height: 300px;
+  margin: 1vw;
+}
