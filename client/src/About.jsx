@@ -4,8 +4,8 @@
 
  import React, { useState, useEffect } from 'react';
  import { makeStyles } from '@material-ui/core/styles';
-
-
+ import Button from '@material-ui/core/Button';
+ import {Link} from 'react-router-dom';
  
  const useStyles = makeStyles((theme) => ({
     paper: {
@@ -14,6 +14,17 @@
      flexDirection: 'column',
      alignItems: 'center',
    },
+   login: {
+    color: 'white',
+    backgroundColor: '#3F51B5',
+    border: "solid white 0.1rem",
+    textDecoration: 'none',
+    '&:hover':{
+      color: '#3F51B5',
+      backgroundColor: 'white',
+      border: "solid #3F51B5 0.1rem"
+    }
+  }
  }));
  
  function About() {
@@ -74,12 +85,22 @@
                         <div className="innerCol">
                             <h2>1. Choose Your Ingredients</h2>
                             <p>Choose your protein, vegetables, grains, and optionally fruit.</p>
-                        </div>
+                            <Link className="aboutButton" to={{
+    pathname: "/Login"
+  }}>
+           <Button color="inherit" className={classes.login}>Get Started</Button>
+          </Link>
+                    </div>    
                 </div>
                 <div className="innerAbout">
                         <div className="innerCol"> 
                             <h2>2. Find a recipe</h2>
                             <p>Once we have your ingredients we will match you with one of our recipes.</p>
+                            <Link className="aboutButton" to={{
+    pathname: "/Login"
+  }}>
+           <Button color="inherit" className={classes.login}>Get Started</Button>
+          </Link>
                         </div>
                     <div className="innerCol recipe"></div>
                 </div>
@@ -88,6 +109,11 @@
                         <div className="innerCol">
                             <h2>3. Save your favorites</h2>
                             <p>Don't ever worry about where to go for that best recipe again. We will keep it safe for you.  When you are hungry, come back and cook!</p>
+                            <Link className="aboutButton" to={{
+    pathname: "/Login"
+  }}>
+           <Button color="inherit" className={classes.login}>Get Started</Button>
+          </Link>
                         </div>
                 </div>
             </div>
