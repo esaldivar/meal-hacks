@@ -75,10 +75,10 @@
                 </div>
                 <div className="innerAbout">
                     <div className="innerCol">Find a recipe</div>
-                    <div className="innerCol"></div>
+                    <div className="innerCol recipe"></div>
                 </div>
                 <div className="innerAbout">
-                    <div className="innerCol"></div>
+                    <div className="innerCol favorites"></div>
                     <div className="innerCol">Keep your favorites</div>
                 </div>
             </div>
