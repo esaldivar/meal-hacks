@@ -67,6 +67,7 @@
             <div className="funnyText">
                 <h1>Meal Hacks</h1>
                 <h2 className="typeBox" ref={el}/>
+                <h2 className="aboutHow">How it works</h2>
                 <div className="innerAbout">
                     <div className="innerCol">bananas</div>
                     <div className="innerCol">oranges</div>
