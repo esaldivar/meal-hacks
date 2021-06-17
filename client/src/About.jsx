@@ -2,7 +2,7 @@
  * 
  */
 
- import React from 'react';
+ import React, { useState, useEffect } from 'react';
  import { makeStyles } from '@material-ui/core/styles';
 
 
@@ -16,14 +16,14 @@
    },
  }));
  
- const About = () => {
+ function About() {
    const classes = useStyles();
 
    const el = React.useRef(null);
    // Create reference to store the Typed instance itself
-     const typed = React.useRef(null);
+    const typed = React.useRef(null);
  
-   React.useEffect(() => {
+   useEffect(() => {
      const options = {
          strings: [
          'Are you hungry?',
@@ -45,6 +45,22 @@
      }
    }, [])
 
+   //api request
+
+
+
+  const [customer, newCustomers] = useState(null);
+
+
+   const getMe =() => {
+     fetch('/api/customers')
+     .then(rawdata => rawdata.json())
+      .then(data => newCustomers(data[0]))
+   };
+
+  
+   //customer does not exist, render without the first name which should be john
+
    return (
     <div>
         <div className="aboutBG">
@@ -52,12 +68,14 @@
                 <h1>Meal Hacks</h1>
                 <h2 className="typeBox" ref={el}/>
                 <div className="innerAbout">
-                    <button className='aboutButton'>backend testing</button>
+                    <button className='aboutButton' onClick={getMe}>backend testing</button>
+                    {customer && <p>{customer.firstName}</p>}
                 </div>
             </div>
         </div>
      </div>
    );
+
  }
  
  export default About;
