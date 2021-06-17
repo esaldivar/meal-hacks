@@ -71,15 +71,24 @@
                 <h2 className="aboutHow">How it works</h2>
                 <div className="innerAbout">
                     <div className="innerCol choose"></div>
-                    <div className="innerCol">Choose Your Ingredients</div>
+                        <div className="innerCol">
+                            <h2>1. Choose Your Ingredients</h2>
+                            <p>Choose your protein, vegetables, grains, and optionally fruit.</p>
+                        </div>
                 </div>
                 <div className="innerAbout">
-                    <div className="innerCol">Find a recipe</div>
+                        <div className="innerCol"> 
+                            <h2>2. Find a recipe</h2>
+                            <p>Once we have your ingredients we will match you with one of our recipes.</p>
+                        </div>
                     <div className="innerCol recipe"></div>
                 </div>
                 <div className="innerAbout">
                     <div className="innerCol favorites"></div>
-                    <div className="innerCol">Keep your favorites</div>
+                        <div className="innerCol">
+                            <h2>3. Save your favorites</h2>
+                            <p>Don't ever worry about where to go for that best recipe again. We will keep it safe for you.  When you are hungry, come back and cook!</p>
+                        </div>
                 </div>
             </div>
         </div>

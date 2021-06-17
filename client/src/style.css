@@ -76,19 +76,33 @@
   color: white;
   font-size: 3rem;
   text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .innerAbout {
   display: flex;
   width: 100%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .innerCol {
-  background-color: red;
   text-align: center;
   width: 50%;
   height: 300px;
   margin: 1vw;
   padding: 1rem;
+}
+
+.innerCol h2 {
+  color: yellow;
+  font-weight: lighter;
+  font-size: 3rem;
+}
+
+.innerCol p {
+  color: rgb(227, 217, 217);
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
 }
 
 .choose{
