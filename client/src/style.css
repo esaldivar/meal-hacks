@@ -132,9 +132,28 @@
 }
 
 .apple {
-  background-color: yellow;
-  color: red;
+  color: #3F51B5;
   font-size: 30px;
   text-align: center;
   margin-top: 65px;
+}
+
+.recipeCols {
+  background-color: #3F51B5;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 0 auto;
+  margin-top: 25px;
+  border: solid blue 1px;
+  width: 80%;
+  padding: 20px;
+  opacity: 0.95;
+}
+
+.recipeBoxes {
+  background-color: white;
+  color: #3F51B5;
+  padding: 20px;
 }

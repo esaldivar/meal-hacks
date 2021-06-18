@@ -38,12 +38,14 @@ const Recipe = () => {
       };
 
     return (
-        <div className="apple">
-            <div>
-            <div>
+<div className="apple">
+<div> 
+<div>
                 <h1 >Choose Your Ingredients</h1>
             </div>
-            <div>
+    <div className="recipeCols">
+            
+            <div className="recipeBoxes">
                 <h2 >Protein</h2>
                 <FormGroup column>
                 <FormControlLabel
@@ -82,7 +84,7 @@ const Recipe = () => {
       
     </FormGroup>
         </div>
-        <div>
+        <div className="recipeBoxes">
             <h2 >Vegetables</h2>
             <FormGroup column>
                 <FormControlLabel
@@ -121,7 +123,7 @@ const Recipe = () => {
       
     </FormGroup>
         </div>
-        <div>
+        <div className="recipeBoxes">
             <h2>Grains</h2>
             <FormGroup column>
                 <FormControlLabel
@@ -160,8 +162,10 @@ const Recipe = () => {
       
     </FormGroup>
         </div>
+        
+        </div>
         <button>Let's cook</button>
-    </div>     
+    </div>    
 </div>
     
 )
