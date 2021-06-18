@@ -25,6 +25,12 @@ const Recipe = () => {
         checkedA: false,
         checkedB: false,
         checkedC: false,
+        checkedD: false,
+        checkedE: false,
+        checkedF: false,
+        checkedG: false,
+        checkedH: false,
+        checkedI: false,
       });
     
       const handleChange = (event) => {
@@ -78,10 +84,83 @@ const Recipe = () => {
         </div>
         <div>
             <h2 >Vegetables</h2>
+            <FormGroup column>
+                <FormControlLabel
+        control={
+          <Checkbox
+            checked={state.checkedD}
+            onChange={handleChange}
+            name="checkedD"
+            color="primary"
+          />
+        }
+        label="Spinach"
+      />
+      <FormControlLabel
+        control={
+          <Checkbox
+            checked={state.checkedE}
+            onChange={handleChange}
+            name="checkedE"
+            color="primary"
+          />
+        }
+        label="Tomato"
+      />
+      <FormControlLabel
+        control={
+          <Checkbox
+            checked={state.checkedF}
+            onChange={handleChange}
+            name="checkedF"
+            color="primary"
+          />
+        }
+        label="Potato"
+      />
+      
+    </FormGroup>
         </div>
         <div>
             <h2>Grains</h2>
+            <FormGroup column>
+                <FormControlLabel
+        control={
+          <Checkbox
+            checked={state.checkedG}
+            onChange={handleChange}
+            name="checkedG"
+            color="primary"
+          />
+        }
+        label="Rice"
+      />
+      <FormControlLabel
+        control={
+          <Checkbox
+            checked={state.checkedH}
+            onChange={handleChange}
+            name="checkedH"
+            color="primary"
+          />
+        }
+        label="Quinoa"
+      />
+      <FormControlLabel
+        control={
+          <Checkbox
+            checked={state.checkedI}
+            onChange={handleChange}
+            name="checkedI"
+            color="primary"
+          />
+        }
+        label="Pasta"
+      />
+      
+    </FormGroup>
         </div>
+        <button>Let's cook</button>
     </div>     
 </div>
     
