@@ -86,7 +86,7 @@
                             <h2>1. Choose Your Ingredients</h2>
                             <p>Choose your protein, vegetables, grains, and optionally fruit.</p>
                             <Link className="aboutButton" to={{
-    pathname: "/Login"
+    pathname: "/Recipe"
   }}>
            <Button color="inherit" className={classes.login}>Get Started</Button>
           </Link>
