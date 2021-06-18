@@ -59,7 +59,7 @@ const NavBar = () => {
 
   return (
     <div className={classes.root}>
-      <AppBar position="fixed">
+      <AppBar position="static">
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <Avatar className="icon" alt="Meal Hacks Icon" src="./logo.png" />

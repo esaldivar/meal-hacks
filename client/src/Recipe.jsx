@@ -17,8 +17,8 @@ import Button from '@material-ui/core/Button';
    },
    login: {
     color: 'white',
-    width: '10%',
-    fontSize: '1rem',
+    width: '15%',
+    fontSize: '1.5rem',
     backgroundColor: '#3F51B5',
     border: "solid white 0.1rem",
     textDecoration: 'none',
@@ -51,52 +51,55 @@ const Recipe = () => {
 
       const classes = useStyles();
 
+      async function getRecipe (){
+        await fetch('/api/recipes');
+      } 
+
     return (
 <div className="apple">
 <div> 
-<div>
-                <h1 >Choose Your Ingredients</h1>
-            </div>
     <div className="recipeCols">
-            
-            <div className="recipeBoxes">
-                <h2 >Protein</h2>
-                <FormGroup column>
+        <div>
+        <h1 >Choose Your Ingredients</h1>
+        <img className="logo" src="./mh.png"></img>
+        </div>
+        <div className="recipeBoxes">
+        <h2 >Protein</h2>
+            <FormGroup column>
                 <FormControlLabel
-        control={
-          <Checkbox
-            checked={state.checkedA}
-            onChange={handleChange}
-            name="checkedA"
-            color="primary"
-          />
-        }
-        label="Chicken"
-      />
-      <FormControlLabel
-        control={
-          <Checkbox
-            checked={state.checkedB}
-            onChange={handleChange}
-            name="checkedB"
-            color="primary"
-          />
-        }
-        label="Beef"
-      />
-      <FormControlLabel
-        control={
-          <Checkbox
-            checked={state.checkedC}
-            onChange={handleChange}
-            name="checkedC"
-            color="primary"
-          />
-        }
-        label="Fish"
-      />
-      
-    </FormGroup>
+            control={
+            <Checkbox
+                checked={state.checkedA}
+                onChange={handleChange}
+                name="checkedA"
+                color="primary"
+            />
+            }
+            label="Chicken"
+        />
+                <FormControlLabel
+            control={
+            <Checkbox
+                checked={state.checkedB}
+                onChange={handleChange}
+                name="checkedB"
+                color="primary"
+            />
+            }
+            label="Beef"
+        />
+                <FormControlLabel
+            control={
+            <Checkbox
+                checked={state.checkedC}
+                onChange={handleChange}
+                name="checkedC"
+                color="primary"
+            />
+            }
+            label="Fish"
+        />
+            </FormGroup>
         </div>
         <div className="recipeBoxes">
             <h2 >Vegetables</h2>
@@ -178,7 +181,7 @@ const Recipe = () => {
         </div>
         
         </div>
-        <Button color="inherit" className={classes.login}>Let's Cook!</Button>
+        <Button color="inherit" className={classes.login} onClick={getRecipe}>Let's Cook!</Button>
     </div>    
 </div>
     
