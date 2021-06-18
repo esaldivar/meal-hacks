@@ -59,10 +59,10 @@ const NavBar = () => {
 
   return (
     <div className={classes.root}>
-      <AppBar position="fixed">
+      <AppBar position="static">
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <Avatar className="icon" alt="Meal Hacks Icon" src="./logo.png" />
+            <Avatar className="icon" alt="Meal Hacks Icon" src="./mh.png" />
           </IconButton>
           <Link className={classes.about} to={{
     pathname: "/"
@@ -70,8 +70,11 @@ const NavBar = () => {
              <Button color="inherit">About Us</Button>
           </Link>
           <Typography variant="h6" className={classes.title}>
-             
+          <Link className={classes.about} to={{
+    pathname: "/Recipe"
+  }}>
               <Button color="inherit">Find a Recipe</Button>
+              </Link>
             </Typography>
           <Link className={classes.loginLink} to={{
     pathname: "/Login"

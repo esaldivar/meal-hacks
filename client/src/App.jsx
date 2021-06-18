@@ -9,6 +9,7 @@ import NavBar from './NavBar'
 import Login from './Login'
 import SignUp from './Signup'
 import About from './About'
+import Recipe from './Recipe';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,6 +25,7 @@ const App = () => {
       <Router>
       <NavBar/>
         <Switch>
+            <Route path="/Recipe" exact component={Recipe} />
             <Route path="/Login" exact component={Login} /> 
             <Route path="/Signup" exact component={SignUp} />
             <Route path="/" exact component={About} />
