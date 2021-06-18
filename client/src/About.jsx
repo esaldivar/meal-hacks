@@ -97,7 +97,7 @@
                             <h2>2. Find a recipe</h2>
                             <p>Once we have your ingredients we will match you with one of our recipes.</p>
                             <Link className="aboutButton" to={{
-    pathname: "/Login"
+    pathname: "/Recipe"
   }}>
            <Button color="inherit" className={classes.login}>Get Started</Button>
           </Link>
@@ -110,7 +110,7 @@
                             <h2>3. Save your favorites</h2>
                             <p>Don't ever worry about where to go for that best recipe again. We will keep it safe for you.  When you are hungry, come back and cook!</p>
                             <Link className="aboutButton" to={{
-    pathname: "/Login"
+    pathname: "/Recipe"
   }}>
            <Button color="inherit" className={classes.login}>Get Started</Button>
           </Link>

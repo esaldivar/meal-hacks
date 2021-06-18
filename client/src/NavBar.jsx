@@ -70,8 +70,11 @@ const NavBar = () => {
              <Button color="inherit">About Us</Button>
           </Link>
           <Typography variant="h6" className={classes.title}>
-             
+          <Link className={classes.about} to={{
+    pathname: "/Recipe"
+  }}>
               <Button color="inherit">Find a Recipe</Button>
+              </Link>
             </Typography>
           <Link className={classes.loginLink} to={{
     pathname: "/Login"

@@ -131,10 +131,10 @@
   text-decoration: none;
 }
 
-.apple h1{
+.apple {
   background-color: yellow;
   color: red;
   font-size: 30px;
   text-align: center;
-  margin-top: 100px;
+  margin-top: 65px;
 }
