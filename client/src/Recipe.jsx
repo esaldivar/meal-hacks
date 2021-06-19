@@ -19,6 +19,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import { ConcatenationScope } from 'webpack';
 
 
   
@@ -75,21 +76,33 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
    
 const Recipe = () => {
     const [state, setState] = React.useState({
-        checkedA: false,
-        checkedB: false,
-        checkedC: false,
-        checkedD: false,
-        checkedE: false,
-        checkedF: false,
-        checkedG: false,
-        checkedH: false,
-        checkedI: false,
+        chicken: false,
+        beef: false,
+        fish: false,
+        spinach: false,
+        tomato: false,
+        potato: false,
+        rice: false,
+        quinoa: false,
+        pasta: false,
       });
-    
+      //create a piece of state with a hook --push this input an empty object
+      //object.chicken = chicken
+      
+      let recipeInsert = '';
+
       const handleChange = (event) => {
         setState({ ...state, [event.target.name]: event.target.checked });
-      };
-
+        for(const key in state){
+            if(recipeInsert.length === 0 && state[key] === true){
+            recipeInsert += key;
+        } else if (state[key] === true && !recipeInsert.includes(key)){
+            recipeInsert += `%2C${key}`;
+        }
+        };
+        console.log(recipeInsert)
+    }
+      
       const classes = useStyles();
 
       const [expanded, setExpanded] = React.useState(false);
@@ -97,6 +110,25 @@ const Recipe = () => {
       const handleExpandClick = () => {
         setExpanded(!expanded);
       };
+
+     
+      
+
+      const getRecipe = () =>{fetch(`https://themealdb.p.rapidapi.com/filter.php?i=${recipeInsert}`, {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-key": "e1ecfbe769mshb2765a17ab15013p158e5fjsn5193e7a6908c",
+		"x-rapidapi-host": "themealdb.p.rapidapi.com"
+	}
+})
+.then(response => {
+	console.log(response);
+})
+.catch(err => {
+	console.error(err);
+});
+
+}
 
     return (
 <div className="apple">
@@ -108,123 +140,123 @@ const Recipe = () => {
         </div>
         <div className="recipeBoxes">
         <h2 >Protein</h2>
-            <FormGroup column>
+            <FormGroup row>
                 <FormControlLabel
             control={
             <Checkbox
-                checked={state.checkedA}
+                checked={state.chicken}
                 onChange={handleChange}
-                name="checkedA"
+                name="chicken"
                 color="primary"
             />
             }
-            label="Chicken"
+            label="chicken"
         />
                 <FormControlLabel
             control={
             <Checkbox
-                checked={state.checkedB}
+                checked={state.beef}
                 onChange={handleChange}
-                name="checkedB"
+                name="beef"
                 color="primary"
             />
             }
-            label="Beef"
+            label="beef"
         />
                 <FormControlLabel
             control={
             <Checkbox
-                checked={state.checkedC}
+                checked={state.fish}
                 onChange={handleChange}
-                name="checkedC"
+                name="fish"
                 color="primary"
             />
             }
-            label="Fish"
+            label="fish"
         />
-            </FormGroup>
+            </FormGroup>  
         </div>
         <div className="recipeBoxes">
             <h2 >Vegetables</h2>
-            <FormGroup column>
+            <FormGroup row>
                 <FormControlLabel
         control={
           <Checkbox
-            checked={state.checkedD}
+            checked={state.spinach}
             onChange={handleChange}
-            name="checkedD"
+            name="spinach"
             color="primary"
           />
         }
-        label="Spinach"
+        label="spinach"
       />
       <FormControlLabel
         control={
           <Checkbox
-            checked={state.checkedE}
+            checked={state.tomato}
             onChange={handleChange}
-            name="checkedE"
+            name="tomato"
             color="primary"
           />
         }
-        label="Tomato"
+        label="tomato"
       />
       <FormControlLabel
         control={
           <Checkbox
-            checked={state.checkedF}
+            checked={state.potato}
             onChange={handleChange}
-            name="checkedF"
+            name="potato"
             color="primary"
           />
         }
-        label="Potato"
+        label="potato"
       />
       
     </FormGroup>
         </div>
         <div className="recipeBoxes">
             <h2>Grains</h2>
-            <FormGroup column>
+            <FormGroup row>
                 <FormControlLabel
         control={
           <Checkbox
-            checked={state.checkedG}
+            checked={state.rice}
             onChange={handleChange}
-            name="checkedG"
+            name="rice"
             color="primary"
           />
         }
-        label="Rice"
+        label="rice"
       />
       <FormControlLabel
         control={
           <Checkbox
-            checked={state.checkedH}
+            checked={state.quinoa}
             onChange={handleChange}
-            name="checkedH"
+            name="quinoa"
             color="primary"
           />
         }
-        label="Quinoa"
+        label="quinoa"
       />
       <FormControlLabel
         control={
           <Checkbox
-            checked={state.checkedI}
+            checked={state.pasta}
             onChange={handleChange}
-            name="checkedI"
+            name="pasta"
             color="primary"
           />
         }
-        label="Pasta"
+        label="pasta"
       />
       
     </FormGroup>
         </div>
         
         </div>
-        <Button color="inherit" className={classes.login}>Let's Cook!</Button>
+        <Button color="inherit" className={classes.login} onClick={getRecipe}>Let's Cook!</Button>
     </div>
     <Card className={classes.root}>
       <CardHeader
@@ -294,5 +326,5 @@ const Recipe = () => {
     
 )
 }
- 
+
 export default Recipe;
