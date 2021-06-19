@@ -93,5 +93,11 @@ module.exports = {
   resolve: {
     // Enable importing JS / JSX files without specifying their extension
     extensions: ['.js', '.jsx'],
+    fallback: {
+      util: require.resolve("util/"),
+      path: require.resolve("path-browserify"),
+      https: require.resolve("https-browserify"),
+      crypto: false
+    }
   },
 };

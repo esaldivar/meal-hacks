@@ -48,7 +48,11 @@
  
  const SignUp = () => {
    const classes = useStyles();
- 
+
+   //state for registering user name
+  //  const [registerUser, setRegisterUser] = useState('')
+  //  const [registerPassword, setRegisterPassword] = useState('')
+
    return (
      <Container component="main" maxWidth="xs">
        <CssBaseline />
@@ -89,10 +93,10 @@
                  variant="outlined"
                  required
                  fullWidth
-                 id="email"
-                 label="Email Address"
-                 name="email"
-                 autoComplete="email"
+                 id="userName"
+                 label="User Name"
+                 name="User Name"
+                 autoComplete="uname"
                />
              </Grid>
              <Grid item xs={12}>
