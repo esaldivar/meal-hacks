@@ -40,8 +40,18 @@ app.use(session({
 //cookie parser
 app.use(cookieParser('secretcode'));
 
+//Routes
+app.post('/login', (req,res)=> {
+  console.log(req.body)
+})
 
+app.post('/register', (req,res)=> {
+  console.log(req.body)
+})
 
+app.post('/user', (req,res)=> {
+  console.log(req.body)
+})
 
 
 
