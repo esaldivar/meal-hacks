@@ -62,7 +62,7 @@ const NavBar = () => {
       <AppBar position="static">
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <Avatar className="icon" alt="Meal Hacks Icon" src="./logo.png" />
+            <Avatar className="icon" alt="Meal Hacks Icon" src="./mh.png" />
           </IconButton>
           <Link className={classes.about} to={{
     pathname: "/"

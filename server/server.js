@@ -50,7 +50,7 @@ app.post('/register', (req,res)=> {
 })
 
 app.post('/user', (req,res)=> {
-  console.log(req.body)
+  res.send('Hello, from the back end')
 })
 
 

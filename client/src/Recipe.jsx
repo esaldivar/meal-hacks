@@ -22,11 +22,25 @@ import Button from '@material-ui/core/Button';
     border: "solid white 0.1rem",
     textDecoration: 'none',
     marginTop: '20px',
+    marginBottom: '20px',
     '&:hover':{
       color: '#3F51B5',
       backgroundColor: 'white',
       border: "solid #3F51B5 0.1rem"
     }
+  },
+  recipeBox: {
+    backgroundColor: '#3F51B5',
+    fontSize: '1.5rem',
+    color: 'white',
+    width: '40vw',
+    margin: '0 auto'
+  },
+  mealImg: {
+    height: '35vh'
+  },
+  mealFont: {
+    marginBottom: '200px'
   }
  }));
 
@@ -54,36 +68,38 @@ const Recipe = () => {
             if(recipeInsert.length === 0 && state[key] === true){
             recipeInsert += key;
         } else if (state[key] === true && !recipeInsert.includes(key)){
-            recipeInsert += `%2C${key}`;
+            recipeInsert += `${key}`;
         }
         };
         console.log(recipeInsert)
     }
-      
+    
+           
       const classes = useStyles();
 
-      async function getRecipe (){
-        await fetch('/api/recipes');
-      } 
-
-     
       
+     const [recipe, getMeal] = React.useState();
+     const [recipeImg, getMealImg] = React.useState();
 
-//       const getRecipe = () =>{fetch(`https://themealdb.p.rapidapi.com/filter.php?i=${recipeInsert}`, {
-// 	"method": "GET",
-// 	"headers": {
-// 		"x-rapidapi-key": "e1ecfbe769mshb2765a17ab15013p158e5fjsn5193e7a6908c",
-// 		"x-rapidapi-host": "themealdb.p.rapidapi.com"
-// 	}
-// })
-// .then(response => {
-// 	console.log(response);
-// })
-// .catch(err => {
-// 	console.error(err);
-// });
+      const getRecipe = () =>{fetch(`https://themealdb.p.rapidapi.com/filter.php?i=chicken_breast`, {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-key": "e1ecfbe769mshb2765a17ab15013p158e5fjsn5193e7a6908c",
+		"x-rapidapi-host": "themealdb.p.rapidapi.com"
+	}
+})
+.then(response => {
+	return response.json()
+}).then(data => {
+  console.log(data)
+  getMeal(data.meals[0].strMeal);
+  getMealImg(data.meals[0].strMealThumb)
+})
+.catch(err => {
+	console.error(err);
+});
 
-// }
+}
 
     return (
 <div className="apple">
@@ -212,7 +228,12 @@ const Recipe = () => {
         
         </div>
         <Button color="inherit" className={classes.login} onClick={getRecipe}>Let's Cook!</Button>
-    </div>    
+    </div>
+    <div className={classes.recipeBox}>
+      {recipe && <h2 className={classes.recipeFont}> `The current recipe is ${recipe}`</h2>}
+      {recipeImg && <img src ={recipeImg} className ={classes.mealImg}></img>}
+      {recipe && <p className={classes.recipeFont}> `This is a friend chicken breast sandwich that is brined in pickle juice.  It has a light batter and is on a hamburger bun.  This is usually accompanied by pickles.`</p>}
+    </div>
 </div>
     
 )
