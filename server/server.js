@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
@@ -9,7 +10,15 @@ const compiler = webpack(config);
 // Tell express to use the webpack-dev-middleware and use the webpack.config.js
 // configuration file as a base.
 
-//api request
+//body parser
+app.use(bodyParser.json());
+
+
+
+//login request
+app.get('/Recipe', (req,res) => {
+  res.status(200).sendFile(path.resolve(_dirname,'../client/src/Recipe.jsx'))
+})
 
 
 
