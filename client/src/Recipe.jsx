@@ -70,6 +70,9 @@ import { ConcatenationScope } from 'webpack';
   },
   text: {
       color: 'white'
+  },
+  logo: {
+      transform: 'rotate(0deg)'
   }
  }));
 
@@ -114,21 +117,21 @@ const Recipe = () => {
      
       
 
-      const getRecipe = () =>{fetch(`https://themealdb.p.rapidapi.com/filter.php?i=${recipeInsert}`, {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-key": "e1ecfbe769mshb2765a17ab15013p158e5fjsn5193e7a6908c",
-		"x-rapidapi-host": "themealdb.p.rapidapi.com"
-	}
-})
-.then(response => {
-	console.log(response);
-})
-.catch(err => {
-	console.error(err);
-});
+//       const getRecipe = () =>{fetch(`https://themealdb.p.rapidapi.com/filter.php?i=${recipeInsert}`, {
+// 	"method": "GET",
+// 	"headers": {
+// 		"x-rapidapi-key": "e1ecfbe769mshb2765a17ab15013p158e5fjsn5193e7a6908c",
+// 		"x-rapidapi-host": "themealdb.p.rapidapi.com"
+// 	}
+// })
+// .then(response => {
+// 	console.log(response);
+// })
+// .catch(err => {
+// 	console.error(err);
+// });
 
-}
+// }
 
     return (
 <div className="apple">
@@ -256,7 +259,7 @@ const Recipe = () => {
         </div>
         
         </div>
-        <Button color="inherit" className={classes.login} onClick={getRecipe}>Let's Cook!</Button>
+        <Button color="inherit" className={classes.login} >Let's Cook!</Button>
     </div>
     <Card className={classes.root}>
       <CardHeader
