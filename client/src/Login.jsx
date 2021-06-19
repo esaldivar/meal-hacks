@@ -52,6 +52,9 @@
  
 const Login = () => {
    const classes = useStyles();
+
+   const [loginUsername, setLoginUsername] = useState('')
+   const [loginPassword, setLoginPassword] = useState('')
  
    return (
      <Grid container component="main" className={classes.root}>
@@ -71,10 +74,10 @@ const Login = () => {
                margin="normal"
                required
                fullWidth
-               id="email"
-               label="Email Address"
-               name="email"
-               autoComplete="email"
+               id="userName"
+               label="User Name"
+               name="username"
+               autoComplete="username"
                autoFocus
              />
              <TextField
