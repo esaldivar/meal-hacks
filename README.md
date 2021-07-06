@@ -8,7 +8,7 @@ A web application to input ingredients and receive recipes.  Will store favorite
 <h1 align ="center">Meal Hacks</h1>
 <p align="center">A source for families to plug in what is in their pantry and load easy to follow recipes.</p>
 <p align="center">
-<img id="MIT-License" src="https://img.shields.io/apm/l/atomic-design-ui.svg?" />
+<img src="docs/Ingredients.png" width="850" />
 </p>
 <h2 align="center">Table of Contents</h2>
 
@@ -26,8 +26,8 @@ A web application to input ingredients and receive recipes.  Will store favorite
 <p>I used <a href="https://excalidraw.com/" target="_blank">Excalidraw</a> to create a wireframe.  I am linking it here to display my thought process for this SPA.</p>
 <img src="docs/navWire.png" width="850" />
 <img src="docs/userUI.png" width="850" />
-<img src="docs/Ingredients.png" width="850" />
-<h2 href="#Features">Features</h2>
+
+
 <h2 href="#License">License</h2>
 
 This product is licensed under the MIT License - see the LICENSE.md file for details.
