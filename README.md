@@ -15,7 +15,6 @@ A web application to input ingredients and receive recipes.  Will store favorite
 
 * [FolderStructure](https://github.com/esaldivar/meal-hacks/#FolderStructure)
 * [Wireframe](https://github.com/esaldivar/meal-hacks/#Wireframe)
-* [Features](https://github.com/esaldivar/meal-hacks/#Features)
 * [License](https://github.com/esaldivar/meal-hacks/#License)
 
 <h2 href="#FolderStructure" align="center" >File System Folder Structure</h2>
