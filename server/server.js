@@ -1,6 +1,7 @@
 const path = require('path');
 const express = require('express');
 const app = express();
+const apiRouter = require('./routes/routes');
 const mongoose = require('mongoose');
 const env = require('dotenv').config();
 const session = require('express-session');
@@ -41,7 +42,7 @@ mongoose.connection.once('open', () => {
 app.use(express.urlencoded({extended:true}));
 
 // Route Handlers
-// app.use('/api', apiRouter);
+app.use('/api', apiRouter);
 
 //Default Error Handler
 
