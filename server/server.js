@@ -1,11 +1,42 @@
 const path = require('path');
 const express = require('express');
 const app = express();
-const PORT = 3000;
+const mongoose = require('mongoose');
+const env = require('dotenv').config();
+const session = require('express-session');
+const mongoStore = require('connect-mongodb-session')(session);
+const PORT = process.env.PORT;
 
 // const cors = require('cors')
 app.use(express.json());
 
+app.use(session({
+  key: process.env.COOKIE_KEY,
+  secret: process.env.SESSION_SECRET,
+  resave: true,
+  saveUninitialized: false,
+  store: new mongoStore({
+    uri: `${process.env.URI}`,
+    databaseName: 'mealHusers',
+    collection: 'sessions',
+    expires: 60 * 60
+  }),
+  cookie: {
+    maxAge: 900000
+  }
+}))
+
+
+//mongoDB
+mongoose.connect(`${process.env.URI}`, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  dbName: 'mealHusers'
+});
+
+mongoose.connection.once('open', () => {
+  console.log('Connected to MongoDB');
+});
 
 app.use(express.urlencoded({extended:true}));
 
