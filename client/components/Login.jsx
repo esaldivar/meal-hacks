@@ -3,6 +3,7 @@
  */
 
  import React from 'react';
+ import axios from 'axios';
  import Avatar from '@material-ui/core/Avatar';
  import Button from '@material-ui/core/Button';
  import CssBaseline from '@material-ui/core/CssBaseline';
@@ -53,8 +54,26 @@
 const Login = () => {
    const classes = useStyles();
 
-  //  const [loginUsername, setLoginUsername] = useState('')
-  //  const [loginPassword, setLoginPassword] = useState('')
+    const [loginUsername, setLoginUsername] = useState('');
+    const [loginPassword, setLoginPassword] = useState('');
+
+    const login = (e) => {
+      e.preventDefault();
+      if(loggedIn){
+        console.log('You are already logged in!');
+        return;
+      }
+      axios.post("/api/login", {
+       data: {
+         username: loginUsername,
+         password: loginPassword,
+       },
+     })
+     .then((res) => {
+       console.log(res.data);
+     })
+     .catch((err) => console.log(err));
+    }
  
    return (
      <Grid container component="main" className={classes.root}>
@@ -78,6 +97,7 @@ const Login = () => {
                label="User Name"
                name="username"
                autoComplete="username"
+               onChange={(e) => setLoginUsername(e.target.value)}
                autoFocus
              />
              <TextField
@@ -90,6 +110,7 @@ const Login = () => {
                type="password"
                id="password"
                autoComplete="current-password"
+               onChange={(e) => setLoginPassword(e.target.value)}
              />
              <FormControlLabel
                control={<Checkbox value="remember" color="primary" />}
@@ -101,7 +122,7 @@ const Login = () => {
                variant="contained"
                color="primary"
                className={classes.submit}
-               
+               onClick={login}
              >
                Sign In
              </Button>
