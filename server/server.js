@@ -1,67 +1,42 @@
 const path = require('path');
 const express = require('express');
-const webpack = require('webpack');
-const webpackDevMiddleware = require('webpack-dev-middleware');
-const mongoose = require('mongoose');
-const cors = require('cors');
-const passport = require('passport');
-const passportLocal = require('passport-local').Strategy;
-const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
-const bcrypt = require('bcryptjs');
-const session = require('express-session');
-
 const app = express();
-const config = require('../client/webpack.config');
-const compiler = webpack(config);
+const PORT = 3000;
 
-// Tell express to use the webpack-dev-middleware and use the webpack.config.js
-// configuration file as a base.
-
-//body parser
+// const cors = require('cors')
 app.use(express.json());
-app.use(express.urlencoded({
-	extended:true
-}));
-
-//cors
-app.use(cors({
-	origin:'http://localhost:3000', //<== location of the react app were connecting to
-	credentials: true
-}));
-
-//session
-app.use(session({
-	secret: 'secretcode',
-	resave: true,
-	saveUninitialized: true
-}));
-
-//cookie parser
-app.use(cookieParser('secretcode'));
-
-//Routes
-app.post('/login', (req,res)=> {
-  console.log(req.body)
-})
-
-app.post('/register', (req,res)=> {
-  console.log(req.body)
-})
-
-app.post('/user', (req,res)=> {
-  console.log(req.body)
-})
 
 
+app.use(express.urlencoded({extended:true}));
 
-app.use(
-	webpackDevMiddleware(compiler, {
-		publicPath: config.output.publicPath,
-	})
-);
+// Route Handlers
+// app.use('/api', apiRouter);
 
-// Serve the files on port 3000.
-app.listen(3000, function () {
-	console.log('Example app listening on port 3000!\n');
+//Default Error Handler
+
+app.use((err, req, res, next) => {
+  const defaultErr = {
+    log: 'Express error handler caught unknown middleware error',
+    status: 400,
+    message: { err: 'An error occurred' },
+  };
+  const errorObj = Object.assign({}, defaultErr, err);
+  console.log(errorObj.log);
+  return res.status(errorObj.status).json(errorObj.message);
 });
+
+// statically serve everything in the build folder on the route '/build'
+app.use('/dist', express.static(path.join(__dirname, '../dist')));
+// serve index.html on the route '/'
+app.get('/', (req, res) => {
+  return res.sendFile(path.join(__dirname, '../index.html'));
+});
+
+// Catch-all to unknown routes (404)
+app.use((req,res) => res.status(404).send('not found'))
+//Start Server
+app.listen(PORT, () => {
+  console.log(`Server listening on port: ${PORT}`);
+});
+
+module.exports = app;
