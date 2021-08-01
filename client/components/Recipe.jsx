@@ -107,7 +107,7 @@ const Recipe = () => {
     <div className="recipeCols">
         <div>
         <h1 >Choose Your Ingredients</h1>
-        <img className="logo" src="./mh.png"></img>
+        <img className="logo" src="./dist/mh.png"></img>
         </div>
         <div className="recipeBoxes">
         <h2 >Protein</h2>
