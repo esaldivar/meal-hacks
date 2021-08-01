@@ -11,10 +11,12 @@ const { User } = require('../../models/userModel');
 const register = async (req, res, next) => {
   try {
     const saltRounds = 10;
-    const {username, password} = req.body.data;
+    const {firstName, lastName, userName, password} = req.body.data;
     const hashedPassword = await bcrypt.hash(password, saltRounds);
     const newUser = await User.create({
-      'user': username, 
+      'firstName': firstName, 
+      'lastName': lastName,
+	  'userName': userName, 
       'password': hashedPassword
     });
     return next();

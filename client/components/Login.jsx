@@ -54,15 +54,11 @@
 const Login = () => {
    const classes = useStyles();
 
-    const [loginUsername, setLoginUsername] = useState('');
-    const [loginPassword, setLoginPassword] = useState('');
+    const [loginUsername, setLoginUsername] = React.useState('');
+    const [loginPassword, setLoginPassword] = React.useState('');
 
     const login = (e) => {
       e.preventDefault();
-      if(loggedIn){
-        console.log('You are already logged in!');
-        return;
-      }
       axios.post("/api/login", {
        data: {
          username: loginUsername,

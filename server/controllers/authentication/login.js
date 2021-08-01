@@ -14,7 +14,7 @@ const { User } = require('../../models/userModel');
 const login =  async (req, res, next) => {
   try {
     const { username, password } = req.body.data;
-    const findUserInDB = await User.findOne({user: username});
+    const findUserInDB = await User.findOne({userName: username});
     if (!findUserInDB) return res.status(200).json({message: 'User does not exist'});
     const validatePassword = await bcrypt.compare(password, findUserInDB.password);
     if (validatePassword) {

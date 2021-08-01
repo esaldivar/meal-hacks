@@ -3,6 +3,7 @@
  */
 
  import React from 'react';
+ import axios from 'axios';
  import Avatar from '@material-ui/core/Avatar';
  import Button from '@material-ui/core/Button';
  import CssBaseline from '@material-ui/core/CssBaseline';
@@ -50,8 +51,26 @@
    const classes = useStyles();
 
    //state for registering user name
-  //  const [registerUser, setRegisterUser] = useState('')
-  //  const [registerPassword, setRegisterPassword] = useState('')
+    const [firstName, setfirstName] = React.useState('')
+    const [lastName, setLastName] = React.useState('')
+    const [registerUser, setRegisterUser] = React.useState('')
+    const [registerPassword, setRegisterPassword] = React.useState('')
+
+    const register = (e) => {
+      e.preventDefault();
+      axios.post("/api/register", {
+       data: {
+         firstName: firstName,
+         lastName: lastName,
+         userName: registerUser,
+         password: registerPassword,
+       },
+     })
+     .then((res) => {
+       console.log(res.data);
+     })
+     .catch((err) => console.log(err));
+    }
 
    return (
      <Container component="main" maxWidth="xs">
@@ -75,6 +94,7 @@
                  id="firstName"
                  label="First Name"
                  autoFocus
+                 onChange={(e) => setfirstName(e.target.value)}
                />
              </Grid>
              <Grid item xs={12} sm={6}>
@@ -86,6 +106,7 @@
                  label="Last Name"
                  name="lastName"
                  autoComplete="lname"
+                 onChange={(e) => setLastName(e.target.value)}
                />
              </Grid>
              <Grid item xs={12}>
@@ -97,6 +118,7 @@
                  label="User Name"
                  name="User Name"
                  autoComplete="uname"
+                 onChange={(e) => setRegisterUser(e.target.value)}
                />
              </Grid>
              <Grid item xs={12}>
@@ -109,6 +131,7 @@
                  type="password"
                  id="password"
                  autoComplete="current-password"
+                 onChange={(e) => setRegisterPassword(e.target.value)}
                />
              </Grid>
            </Grid>
@@ -118,6 +141,7 @@
              variant="contained"
              color="primary"
              className={classes.submit}
+             onClick={register}
            >
              Sign Up
            </Button>
