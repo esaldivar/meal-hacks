@@ -1,7 +1,9 @@
+const {Meals} = require('../mealSchemas')
+
 const resolvers = {
   Query: {
-    hello: () => 'bonjour elliot'
-  }
+    recipes:  () => Meals.find({"ingredients":`quinoa`})
+}
 };
 
 

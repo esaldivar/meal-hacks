@@ -4,6 +4,7 @@ const register = require('../controllers/authentication/register');
 const login = require('../controllers/authentication/login');
 const isAlreadyLoggedIn = require('../controllers/authentication/alreadyLoggedIn');
 const findRecipe = require('../controllers/recipes/getRecipes');
+const findRecipeQL = require('../schemas/resolvers/resolvers');
 
 router.post('/register', isAlreadyLoggedIn, register, (req, res) => {
   return res.status(200).json({message: 'You successfully signed up!'});
