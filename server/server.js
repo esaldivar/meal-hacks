@@ -6,11 +6,22 @@ const mongoose = require('mongoose');
 const env = require('dotenv').config();
 const session = require('express-session');
 const mongoStore = require('connect-mongodb-session')(session);
+const {ApolloServer} = require('apollo-server');
+const typeDefs = require('./schemas/typeDefs/testType');
+const resolvers = require('./schemas/resolvers/resolvers');
 const PORT = process.env.PORT;
 
 // const cors = require('cors')
 app.use(express.json());
 
+//graphql server
+const server = new ApolloServer({typeDefs, resolvers});
+server.listen().then(({url}) => {
+  console.log(`Server is running!
+  Listening on ${url}`);
+})
+
+//session storage for mongoDB
 app.use(session({
   key: process.env.COOKIE_KEY,
   secret: process.env.SESSION_SECRET,
@@ -45,7 +56,6 @@ app.use(express.urlencoded({extended:true}));
 app.use('/api', apiRouter);
 
 //Default Error Handler
-
 app.use((err, req, res, next) => {
   const defaultErr = {
     log: 'Express error handler caught unknown middleware error',
@@ -70,5 +80,3 @@ app.use((req,res) => res.status(404).send('not found'))
 app.listen(PORT, () => {
   console.log(`Server listening on port: ${PORT}`);
 });
-
-module.exports = app;
