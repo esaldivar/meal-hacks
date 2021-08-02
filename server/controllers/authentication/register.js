@@ -1,5 +1,6 @@
 const bcrypt = require('bcrypt');
 const { User } = require('../../schemas/userSchema');
+const { Meals } = require('../../schemas/mealSchemas');
 
 /**
  * @author Eric Saldivar
@@ -10,13 +11,14 @@ const { User } = require('../../schemas/userSchema');
 
 const register = async (req, res, next) => {
   try {
+
     const saltRounds = 10;
     const {firstName, lastName, userName, password} = req.body.data;
     const hashedPassword = await bcrypt.hash(password, saltRounds);
     const newUser = await User.create({
       'firstName': firstName, 
       'lastName': lastName,
-	  'userName': userName, 
+      'userName': userName, 
       'password': hashedPassword
     });
     return next();

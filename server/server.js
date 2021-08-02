@@ -80,5 +80,3 @@ app.use((req,res) => res.status(404).send('not found'))
 app.listen(PORT, () => {
   console.log(`Server listening on port: ${PORT}`);
 });
-
-module.exports = app;
