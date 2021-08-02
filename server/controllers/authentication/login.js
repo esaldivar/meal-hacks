@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt');
 const { User } = require('../../schemas/userSchema');
-
+const { Meals } = require('../../schemas/mealSchemas');
 /**
  * 
  * @param {username, password} req.body 
@@ -13,6 +13,9 @@ const { User } = require('../../schemas/userSchema');
 
 const login =  async (req, res, next) => {
   try {
+    const getRecipes = await Meals.find();
+	  console.log(getRecipes[0]);
+
     const { username, password } = req.body.data;
     const findUserInDB = await User.findOne({userName: username});
     if (!findUserInDB) return res.status(200).json({message: 'User does not exist'});

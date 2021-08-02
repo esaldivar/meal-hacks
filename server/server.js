@@ -17,7 +17,7 @@ app.use(express.json());
 //graphql server
 const server = new ApolloServer({typeDefs, resolvers});
 server.listen().then(({url}) => {
-  console.log(`Server is running!
+  console.log(`GraphQL Server is running!
   Listening on ${url}`);
 })
 

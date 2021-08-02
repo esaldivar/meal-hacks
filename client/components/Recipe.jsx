@@ -4,7 +4,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-
+import axios from 'axios';
 
   
   const useStyles = makeStyles((theme) => ({
@@ -71,36 +71,39 @@ const Recipe = () => {
             recipeInsert += `${key}`;
         }
         };
-        console.log(recipeInsert)
     }
     
            
       const classes = useStyles();
+      const [expanded, setExpanded] = React.useState(false);
 
-      
-     const [recipe, getMeal] = React.useState();
-     const [recipeImg, getMealImg] = React.useState();
+      const handleExpandClick = () => {
+        setExpanded(!expanded);
+      };
 
-      const getRecipe = () =>{fetch(`https://themealdb.p.rapidapi.com/filter.php?i=chicken_breast`, {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-key": "e1ecfbe769mshb2765a17ab15013p158e5fjsn5193e7a6908c",
-		"x-rapidapi-host": "themealdb.p.rapidapi.com"
-	}
-})
-.then(response => {
-	return response.json()
-}).then(data => {
-  console.log(data)
-  getMeal(data.meals[0].strMeal);
-  getMealImg(data.meals[0].strMealThumb)
-})
-.catch(err => {
-	console.error(err);
-});
+      const getMeals =  () => {
+        const ingredients =   [];
+        for(let key in state){
+          if(state[key] === true){
+            ingredients.push(key);
+          }
+        }
+        console.log(ingredients)
+        axios.get('/api/getRecipes',
+          {
+            params: {
+            ingredients: ingredients
+          }
+        }
+          ).then((res) => {
+          console.log(res.data.message);
+        }).catch((err) => {
+          console.log(err);
+        })
+      }
+     
 
-}
-
+     
     return (
 <div className="apple">
 <div> 
@@ -227,12 +230,7 @@ const Recipe = () => {
         </div>
         
         </div>
-        <Button color="inherit" className={classes.login} onClick={getRecipe}>Let's Cook!</Button>
-    </div>
-    <div className={classes.recipeBox}>
-      {recipe && <h2 className={classes.recipeFont}> `The current recipe is ${recipe}`</h2>}
-      {recipeImg && <img src ={recipeImg} className ={classes.mealImg}></img>}
-      {recipe && <p className={classes.recipeFont}> `This is a friend chicken breast sandwich that is brined in pickle juice.  It has a light batter and is on a hamburger bun.  This is usually accompanied by pickles.`</p>}
+        <Button color="inherit" className={classes.login} onClick={getMeals}>Let's Cook!</Button>
     </div>
 </div>
     
